@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wealth and Pain — Independent mobile game studio. Download our games on Google Play.">
+    <meta name="keywords" content="indie game studio, mobile games, action games, Google Play">
+    <meta property="og:title" content="Wealth and Pain">
+    <meta property="og:description" content="Independent mobile game studio.">
+    <meta property="og:type" content="website">
+    <title>Wealth and Pain</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300d4ff'/><text x='16' y='23' font-size='18' text-anchor='middle' font-weight='900' fill='%23030508' font-family='monospace'>N</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </head>
+  <body>
+
+    <!-- ===== NAVBAR ===== -->
+    <div id="header"></div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-grid-overlay"></div>
+      <canvas id="hero-canvas" class="hero-particles" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;"></canvas>
+
+      <div class="hero-visual">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+      </div>
+
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-content">
+          <h1 class="display-xl fade-up stagger-1">
+            <span class="text-gradient-cyan">Create. Play. Improve.</span>
+          </h1>
+          <p class="hero-subtitle fade-up stagger-2">
+            Independent developer focused on creating fun and engaging mobile game experiences.
+          </p>
+          <div class="hero-actions fade-up stagger-3">
+            <a href="https://play.google.com/store/apps/developer?id=Wealth+and+Pain" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M6 2l8 8-8 8V2z"/></svg>
+              View Games
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll">
+        <div class="scroll-indicator"></div>
+        <span>Scroll</span>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== COMING SOON ===== -->
+    <section class="section" id="upcoming">
+      <div class="container">
+        <div class="section-header centered fade-up">
+          <div class="section-label">In Development</div>
+          <h2 class="section-title">Coming Soon</h2>
+          <p class="section-subtitle">Follow the development journey and stay updated on future releases.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="coming-soon-card fade-up">
+            <div class="coming-soon-icon">🥊</div>
+            <div class="coming-soon-title">Fighting Arena</div>
+            <div class="coming-soon-desc">A fast-paced mobile fighting game where skill, timing, and strategy determine the ultimate champion.</div>
+            <div class="coming-soon-badge">
+              <span>●</span> Q4 2026
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== SOCIAL ===== -->
+    <section class="social-section section" id="contact">
+      <div class="container">
+        <div class="section-header centered fade-up">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-subtitle">Follow my journey as an indie game developer, stay updated on new releases, and feel free to reach out.</p>
+        </div>
+
+        <div class="social-grid fade-up stagger-1">
+          <a href="https://discord.com/users/michael58_" target="_blank" rel="noopener" class="social-card discord">
+            <i class="fab fa-discord social-icon"></i>
+            <div class="social-name">Discord</div>
+            <div class="social-handle">discord.gg/michael58_</div>
+          </a>
+          <a href="https://www.linkedin.com/in/michael-garciag/" target="_blank" rel="noopener" class="social-card linkedin">
+            <i class="fab fa-linkedin social-icon"></i>
+            <div class="social-name">LinkedIn</div>
+            <div class="social-handle">Michael Garcia</div>
+          </a>
+          <a href="https://www.instagram.com/wealthandpain" target="_blank" rel="noopener" class="social-card instagram">
+            <i class="fab fa-instagram social-icon"></i>
+            <div class="social-name">Instagram</div>
+            <div class="social-handle">@wealthandpain</div>
+          </a>
+          <a href="mailto:wealthandpain@gmail.com" class="social-card email">
+            <i class="fas fa-envelope social-icon"></i>
+            <div class="social-name">Email</div>
+            <div class="social-handle">wealthandpain@gmail.com</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <div id="footer"></div>
+
+    <script src="js/component-loader.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

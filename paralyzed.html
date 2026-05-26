@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Paralyzed — Paralyzed is an adrenaline-pumping, endless zombie survival game where your wits and reflexes are your greatest allies.">
+    <meta property="og:title" content="Paralyzed">
+    <meta property="og:description" content="Paralyzed is an adrenaline-pumping, endless zombie survival game where your wits and reflexes are your greatest allies.">
+    <title>Paralyzed</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300d4ff'/><text x='16' y='23' font-size='18' text-anchor='middle' font-weight='900' fill='%23030508' font-family='monospace'>N</text></svg>">
+  </head>
+  <body>
+
+  <!-- ===== NAVBAR ===== -->
+  <div id="header"></div>
+
+  <!-- ===== GAME HERO ===== -->
+  <section class="game-hero">
+    <div class="game-hero-bg"></div>
+
+    <div class="game-hero-visual">
+      <div class="game-hero-artwork">
+        <img src="assets/img/paralyzed-hero.png" alt="Paralyzed Game Artwork" style="width:100%;height:auto;display:block;">
+      </div>
+      <div class="game-hero-gradient"></div>
+    </div>
+
+    <!-- Particle canvas -->
+    <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;"></canvas>
+
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="game-hero-content">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+          <span class="tag">Endless runner</span>
+          <span class="tag purple">Action</span>
+        </div>
+        <div class="game-hero-title text-gradient-cyan fade-up">Paralyzed</div>
+        <p class="game-hero-tagline fade-up stagger-1">"Stay alert, keep moving, and see how long you can survive."</p>
+        <div class="game-hero-actions fade-up stagger-2">
+          <a href="https://play.google.com/store/apps/details?id=com.WealthAndPain.Paralyzed" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>▶</span> Download Free on Google Play
+          </a>
+        </div>
+        <div style="margin-top:24px;display:flex;gap:32px;flex-wrap:wrap;" class="fade-up stagger-3">
+          <div>
+            <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--accent-cyan);">500+</div>
+            <div style="font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;">Downloads</div>
+          </div>
+          <div>
+            <div style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--accent-cyan);">Free</div>
+            <div style="font-family:var(--font-ui);font-size:0.7rem;letter-spacing:0.1em;color:var(--text-muted);text-transform:uppercase;">To Play</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT THE GAME ===== -->
+  <section class="section" id="about-game">
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:80px;">
+        <div class="fade-up">
+          <div class="section-label">About the Game</div>
+          <h2 class="section-title" style="margin-bottom:24px;">Welcome to the ultimate<br><span class="text-gradient-cyan"> zombie apocalypse experience!</span></h2>
+            <p style="color:var(--text-secondary);margin-bottom:16px;line-height:1.8;font-size:0.95rem;">
+              Paralyzed is an adrenaline-pumping, endless zombie survival game where your wits and reflexes are your greatest allies. Do you have what it takes to fend off the relentless waves of zombies and secure your position?
+            </p>
+
+            <p style="color:var(--text-secondary);margin-bottom:16px;line-height:1.8;font-size:0.95rem;">
+              Face increasingly dangerous zombie hordes, react quickly under pressure, and survive for as long as possible in a fast-paced arena where every second matters. Choose from multiple playable characters and adapt your strategy to outlast the apocalypse.
+            </p>
+
+            <p style="color:var(--text-secondary);line-height:1.8;font-size:0.95rem;">
+              Discover powerful weapon upgrades and game-changing power-ups that temporarily boost your abilities and help you push further into the endless survival challenge. 
+            </p>
+        </div>
+        <div class="fade-up stagger-1">
+          <div style="background:var(--bg-card);border:1px solid var(--border-dim);border-radius:var(--radius-xl);padding:36px;margin-bottom:24px;">
+            <h3 style="font-family:var(--font-display);font-size:1rem;font-weight:700;margin-bottom:20px;letter-spacing:0.05em;">Game Info</h3>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <div style="display:flex;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border-dim);">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Genre</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">Endless runner / Action</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border-dim);">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Platform</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">Android (iOS Coming)</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border-dim);">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Rating</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">Everyone 10+</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border-dim);">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Size</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">192 MB</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;padding-bottom:14px;border-bottom:1px solid var(--border-dim);">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Languages</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">English / Español</span>
+              </div>
+              <div style="display:flex;justify-content:space-between;">
+                <span style="font-family:var(--font-ui);font-size:0.8rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;">Last Update</span>
+                <span style="font-family:var(--font-ui);font-size:0.875rem;font-weight:500;">May 29, 2026</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://play.google.com/store/apps/details?id=com.WealthAndPain.Paralyzed" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">
+            <span>▶</span> Download Free on Google Play
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== SCREENSHOTS ===== -->
+  <section class="screenshots-section section" id="screenshots">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Gallery</div>
+        <h2 class="section-title">Screenshots</h2>
+        <p class="section-subtitle">Click any screenshot to view it full-size. Swipe through the entire gallery.</p>
+      </div>
+      <div class="screenshots-grid fade-up stagger-1">
+        <div class="screenshot-item">
+          <img src="assets/img/paralyzed-screenshot-2.jpeg" alt="Paralyzed Screenshot 1" class="screenshot-image">
+        </div>
+        <div class="screenshot-item">
+          <img src="assets/img/paralyzed-screenshot-3.jpeg" alt="Paralyzed Screenshot 2" class="screenshot-image">
+        </div>
+        <div class="screenshot-item">
+          <img src="assets/img/paralyzed-screenshot-1.jpeg" alt="Paralyzed Screenshot 3" class="screenshot-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Gameplay</div>
+        <h2 class="section-title">What Makes It Special</h2>
+        <p class="section-subtitle">Paralyzed is an adrenaline-pumping, endless zombie survival game where your wits and reflexes are your greatest allies.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-icon">🧟</div>
+          <div class="feature-title">Endless Survival Challenge</div>
+          <div class="feature-desc">Test your survival skills as you face never-ending waves of zombies.</div>
+        </div>
+        <div class="feature-card fade-up stagger-1">
+          <div class="feature-icon">👥</div>
+          <div class="feature-title">Diverse Characters</div>
+          <div class="feature-desc">Choose from a variety of characters. Find the perfect survivor that matches your style.</div>
+        </div>
+        <div class="feature-card fade-up stagger-2">
+          <div class="feature-icon">💣</div>
+          <div class="feature-title">Weapons</div>
+          <div class="feature-desc">Start every game with your trusty pistol. Seek out powerful weapon power-ups to temporarily boost your firepower.</div>
+        </div>
+        <div class="feature-card fade-up stagger-3">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Power-Ups</div>
+          <div class="feature-desc">Discover powerful enhancements that can turn the tide in your favor. Use them strategically to gain an edge over the relentless zombie swarm.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ===== PRIVACY POLICY ===== -->
+  <section class="section" id="privacy" style="background:var(--bg-deep);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label">Legal</div>
+        <h2 class="section-title">Privacy Policy</h2>
+        <p style="color:var(--text-secondary);font-size:0.85rem;margin-top:8px; padding-bottom: 20px;">Last updated: May 25, 2026</p>
+        <p>This privacy policy applies to the Dust Arena app (hereby referred to as "Application") for mobile devices that was created by Wealth And Pain (hereby referred to as "Service Provider") as an Ad Supported service. This service is intended for use "AS IS".</p>
+      </div>
+
+      <div class="privacy-content fade-up stagger-1">
+        <div style="background:var(--bg-card);border:1px solid var(--border-dim);border-radius:var(--radius-xl);padding:48px;">
+
+          <div class="privacy-section">
+            <h3>1. Information Collection and Use</h3>
+            <p>The Application collects information when you download and use it. This information may include information such as:</p>
+            <ul>
+              <li>Your device's Internet Protocol address (e.g. IP address).</li>
+              <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages.</li>
+              <li>The time spent on the Application.</li>
+              <li>The operating system you use on your mobile device.</li>
+            </ul>
+            <p>The Application collects your device's location, which helps the Service Provider determine your approximate geographical location and make use of in below ways:</p>
+            <ul>
+              <li>Geolocation Services: The Service Provider utilizes location data to provide features such as personalized content, relevant recommendations, and location-based services.</li>
+              <li>Analytics and Improvements: Aggregated and anonymized location data helps the Service Provider to analyze user behavior, identify trends, and improve the overall performance and functionality of the Application.</li>
+              <li>Third-Party Services: Periodically, the Service Provider may transmit anonymized location data to external services. These services assist them in enhancing the Application and optimizing their offerings.</li>
+            </ul>
+            <p>The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices and marketing promotions.</p>
+            <p>For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information. The information that the Service Provider request will be retained by them and used as described in this privacy policy.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>2. Third Party Access</h3>
+            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement. </p>
+            <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about handling data. Below are the links to the Privacy Policy of the third-party service providers used by the Application:</p>
+            <ul>
+              <li>          
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+                  Google Play Services
+                </a>
+              </li>
+              <li>
+                <a href="https://unity.com/es/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener">
+                  Unity
+                </a>
+              </li>
+            </ul>
+            <p>The Service Provider may disclose User Provided and Automatically Collected Information: as required by law, such as to comply with a subpoena, or similar legal process; when they believe in good faith that disclosure is necessary to protect their rights, protect your safety or the safety of others, investigate fraud, or respond to a government request; with their trusted services providers who work on their behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>3. Opt-Out Rights</h3>
+            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>4. Data Retention Policy</h3>
+            <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at wealthandpain@gmail.com and they will respond in a reasonable time.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>5. Children</h3>
+            <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13.</p>
+            <p>The Application does not address anyone under the age of 13. The Service Provider does not knowingly collect personally identifiable information from children under 13 years of age. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact the Service Provider (wealthandpain@gmail.com) so that they will be able to take the necessary actions.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>6. Security</h3>
+            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains..</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>7. Changes</h3>
+            <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
+            <p>This privacy policy is effective as of 2025-06-08</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>8. Your Consent</h3>
+            <p>By using the Application, you are consenting to the processing of your information as set forth in this Privacy Policy now and as amended by us.</p>
+          </div>
+
+          <div class="privacy-section">
+            <h3>9. Contact</h3>
+            <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <strong style="color:var(--accent-cyan);"><a href="mailto:wealthandpain@gmail.com">wealthandpain@gmail.com</a></strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SUPPORT ===== -->
+  <section class="section" id="support" style="background:var(--bg-deep);">
+    <div class="container">
+      <div class="section-header centered fade-up">
+        <div class="section-label">Support</div>
+        <h2 class="section-title">Need Help?</h2>
+        <p class="section-subtitle">Feel free to reach out for support, feedback, or questions. I'll do my best to respond as soon as possible.</p>
+      </div>
+
+      <div class="glass-card support-card fade-up stagger-1" style="border:1px solid var(--border-dim);background:var(--bg-card);">
+        <div style="font-size:3rem;margin-bottom:20px;">🛟</div>
+        <h3 style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:12px;">Contact Support</h3>
+        <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:28px;line-height:1.7;">
+          For bugs, or general questions, I am ready to help.
+        </p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="mailto:wealthandpain@gmail.com?subject=Bug Report - Paralyzed" class="btn btn-secondary" style="font-size:0.8rem;padding:10px 20px;">
+            🐛 Report a Bug
+          </a>
+        </div>
+        <p style="font-family:var(--font-ui);font-size:0.75rem;color:var(--text-muted);margin-top:24px;letter-spacing:0.05em;">
+          Support Hours: Monday–Friday, 9:00 AM – 6:00 PM (UTC-6)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="footer"></div>
+
+  <script src="js/component-loader.js"></script>
+  <script src="js/main.js"></script>
+  </body>
+</html>
