@@ -12,12 +12,7 @@ document.addEventListener('componentsLoaded', () => {
   initScrollAnimations();
   initCounters();
   initParticles();
-  initFAQ();
-  initGameFilter();
-  initSearch();
-  initSmoothScroll();
   initLightbox();
-  initTrailer();
   initCursorGlow();
   initCopyEmail();
 });
@@ -275,7 +270,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 })();
 
 // ── Cursor glow ──
-function initCursorGlow() {
+(function initCursorGlow() {
   if (window.matchMedia('(pointer: coarse)').matches) return;
 
   const glow = document.createElement('div');
@@ -289,7 +284,7 @@ function initCursorGlow() {
     glow.style.left = e.clientX + 'px';
     glow.style.top  = e.clientY + 'px';
   }, { passive: true });
-};
+})();
 
 // ── Toast notification utility ──
 window.showToast = function(msg, type = 'info') {
